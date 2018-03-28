@@ -69,10 +69,26 @@ for root,dirs,files in os.walk("."): #디렉토리 내 모든 파일 확인
 
 print data['file']['py'] #데이터 딕셔너리 안의 [파일][파이썬] 실행
 
+# 소문자 -> 대문자 / 대문자 -> 소문자 변환 코드
+def change(string):
+    result = ''
+    for check in string:
+        if check.islower() is True:
+            result += check.upper()
+        else:
+            result += check.lower()
+    return result
+string = raw_input("입력:")
+print change(string)
+
 '''
-import textwrap
-strs = "ABCDEFGHIJKLIMNOQRSTUVWXYZ"
-return (textwrap.fill(strs, 4))
 
+def encrypt(plain,shift_key=1): #plain 암호화 할 단어 / shift_key = 넘길 숫자
+    # shift_key
+    result = ''
+    for letter in plain:
+        result += chr(ord(letter) + shift_key)
 
-print count()
+    return result
+encrypt = raw_input("input:")
+print encrypt(plain,shift_key)
